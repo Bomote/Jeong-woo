@@ -1,0 +1,328 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+main{
+    position: relative;
+}
+.container{
+    position: sticky;
+    width: auto;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 800px;
+    perspective-origin: 50% calc(50% - 300px);
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(-30deg);
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    animation: turn 30s linear infinite;
+}
+.pyramid{
+    z-index: 100;
+}
+.pyramidXXL{
+    z-index: 95;
+}
+.pyramidXL{
+    z-index: 90;
+}
+.pyramidLG{
+    z-index: 85;
+}
+.pyramidMD{
+    z-index: 80;
+}
+.pyramidSM{
+    z-index: 75;
+}
+.pyramidXS{
+    z-index: 70;
+}
+.pyramidCAP{
+    z-index: 70;
+}
+@keyframes turn {
+    to{
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(360deg);
+    }
+}
+
+.side{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    
+}
+.sideXXL {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
+.sideXL {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
+.sideLG {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
+.sideMD {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
+.sideSM {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
+.sideXS {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
+.sideCAP {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
+
+/* First Pyramid */
+
+.front {
+    transform: translateZ(91px) rotateX(30deg);
+}
+.back {
+    transform: rotateY(180deg) translateZ(91px) rotateX(30deg);
+}
+.left {
+    transform: rotateY(90deg) translateZ(91px) rotateX(30deg);
+}
+.right {
+    transform: rotateY(-90deg) translateZ(91px) rotateX(30deg);
+}
+
+/* Second Pyramid */
+
+.frontXXL {
+    transform: translateZ(68px) rotateX(26deg);
+}
+.backXXL {
+    transform: rotateY(180deg) translateZ(68px) rotateX(26deg);
+}
+.leftXXL {
+    transform: rotateY(90deg) translateZ(68px) rotateX(26deg);
+}
+.rightXXL {
+    transform: rotateY(-90deg) translateZ(68px) rotateX(26deg);
+}
+
+/* Third Pyramid */
+
+.frontXL {
+    transform: translateZ(57px) rotateX(27deg);
+}
+.backXL {
+    transform: rotateY(180deg) translateZ(57px) rotateX(27deg);
+}
+.leftXL {
+    transform: rotateY(90deg) translateZ(57px) rotateX(27deg);
+}
+.rightXL {
+    transform: rotateY(-90deg) translateZ(57px) rotateX(27deg);
+}
+
+/* Fourth Pyramid */
+
+.frontLG {
+    transform: translateZ(45px) rotateX(27deg);
+}
+.backLG {
+    transform: rotateY(180deg) translateZ(45px) rotateX(27deg);
+}
+.leftLG {
+    transform: rotateY(90deg) translateZ(45px) rotateX(27deg);
+}
+.rightLG {
+    transform: rotateY(-90deg) translateZ(45px) rotateX(27deg);
+}
+
+/* Fifth Pyramid */
+
+.frontMD {
+    transform: translateZ(34px) rotateX(27deg);
+}
+.backMD {
+    transform: rotateY(180deg) translateZ(34px) rotateX(27deg);
+}
+.leftMD {
+    transform: rotateY(90deg) translateZ(34px) rotateX(27deg);
+}
+.rightMD {
+    transform: rotateY(-90deg) translateZ(34px) rotateX(27deg);
+}
+
+/* Sixth Pyramid */
+
+.frontSM {
+    transform: translateZ(24px) rotateX(27deg);
+}
+.backSM {
+    transform: rotateY(180deg) translateZ(24px) rotateX(27deg);
+}
+.leftSM {
+    transform: rotateY(90deg) translateZ(24px) rotateX(27deg);
+}
+.rightSM {
+    transform: rotateY(-90deg) translateZ(24px) rotateX(27deg);
+}
+
+/* Seventh Pyramid */
+
+.frontXS {
+    transform: translateZ(13px) rotateX(26deg);
+}
+.backXS {
+    transform: rotateY(180deg) translateZ(13px) rotateX(26deg);
+}
+.leftXS {
+    transform: rotateY(90deg) translateZ(13px) rotateX(26deg);
+}
+.rightXS {
+    transform: rotateY(-90deg) translateZ(13px) rotateX(26deg);
+}
+
+/* Pyramid Cap */
+
+.frontCAP {
+    transform: translateZ(7px) rotateX(28deg);
+}
+.backCAP {
+    transform: rotateY(180deg) translateZ(7px) rotateX(28deg);
+}
+.leftCAP {
+    transform: rotateY(90deg) translateZ(7px) rotateX(28deg);
+}
+.rightCAP {
+    transform: rotateY(-90deg) translateZ(7px) rotateX(28deg);
+}
+
+body {
+    font-family: 'lato', sans-serif;
+}
+.table {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.responsive-table li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.responsive-table .table-header {
+    background-color: #95a5a6;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+    background-color: #fff;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .col-1 {
+    flex-basis: 10%;
+}
+.responsive-table .col-2 {
+    flex-basis: 40%;
+}
+.responsive-table .col-3 {
+    flex-basis: 25%;
+}
+.responsive-table .col-4 {
+    flex-basis: 25%;
+}
+@media all and (max-width: 767px) {
+    .responsive-table .table-header {
+        display: none;
+   }
+    .responsive-table li {
+        display: block;
+   }
+    .responsive-table .col {
+        flex-basis: 100%;
+   }
+    .responsive-table .col {
+        display: flex;
+        padding: 10px 0;
+   }
+    .responsive-table .col:before {
+        color: #6c7a89;
+        padding-right: 10px;
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: right;
+   }
+}
+
+.btn{
+    color: white;
+    background-color: rgba(0,132,255,1);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
