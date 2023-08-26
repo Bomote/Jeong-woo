@@ -1,28 +1,187 @@
- *{
+/*************************************** General settings ***************************************/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
+    text-decoration: none;
+    list-style: none;
 }
 
-body{
-    background-color: white;
-    width: 100%;
-    height: 100%;
+a {
+    color: black;
+    font-weight: 600;
 }
-main{
+
+a:hover {
+    color: rgb(64, 66, 182);
+}
+
+span {
+    color: #028090;
+    font-size: 18px;
+    padding: 8px;
+}
+/*************************************** Navbar  Start***************************************/
+nav {
+  display: flex;
+  margin: 40px 40px;
+  justify-content: space-around;
+}
+nav ul {
+    display: flex;
+    flex-basis: 60%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.dropdown {
+    overflow: hidden;
+}
+
+.dropbtn{
+    border: 0px;
+    background-color: transparent;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.dropbtn:hover {
+    cursor: pointer;
+    color: rgb(64, 66, 182);
+}
+
+.drop-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    min-width: 130px;
+    padding: 0px 70px 0px 5px;
+    background: rgb(34, 25, 62);
+}
+
+.drop-content a {
+    display: block;
+    color: white;
+    margin: 10px 10px;
+}
+
+.dropdown:hover .drop-content {
+    display: block;
+}
+
+.login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin-left: 20px;
+}
+/*************************************** Navbar End ***************************************/
+/*************************************** Main Content Start ***************************************/
+
+main {
+    background-image: url(assets/silver-coin-stacks-money-currency-finance-savings-investment-concept-background-3d-illustration.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
 }
-.container{
-    position: sticky;
-    width: auto;
-    height: 500px;
+
+.glass {
+    backdrop-filter: blur(4px) saturate(83%);
+    -webkit-backdrop-filter: blur(4px) saturate(83%);
+    background-color: rgba(244, 91, 105, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(244, 91, 105, 0.3);
+    width: 85%;
+    height: 90%;
+    padding:40px;
+    margin-top: 140px;
+}
+
+.sponsorable {
+    display: flex;
+    gap: 10px;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+/***************************** Table Content Start *****************************/
+.table {
+    margin-top: 90px;
+}
+
+table {
+    width: 80%;
+    margin-left: 40px;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+tr {
+    border-radius: 3px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #456990;
+}
+
+.table-head {
+    background-color: #114B5F;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #E4FDE1;
+}
+
+.table-row {
+    background-color: #E4FDE1;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+}
+
+.col-1 {
+    flex-basis: 40%;
+}
+
+.col-2 {
+    flex-basis: 20%;
+}
+
+.col-3 {
+    flex-basis: 35%;
+}
+
+/***************************** Table Content End *****************************/
+
+.reveal-btn{
+    margin: 70px;
+}
+
+#referral-btn {
+    display: none;
+}
+/*************************************** Main Content End ***************************************/
+/*************************************** Pyramid Content Start ***************************************/
+.pyramid-container{
+    position: absolute;
+    top: 50%;
+    right: 10%;
     perspective: 800px;
     perspective-origin: 50% calc(50% - 300px);
 }
+
 .box{
     position: absolute;
     top: 50%;
@@ -33,310 +192,114 @@ main{
     transform-style: preserve-3d;
     animation: turn 30s linear infinite;
 }
-.pyramid{
-    z-index: 100;
+/* Pyramid Z-index */
+
+.pyramid, .pyramidXXL, .pyramidXL, .pyramidLG,
+.pyramidMD, .pyramidSM, .pyramidXS, .pyramidCAP {
+    z-index: 100; /* Pyramid base z-index */
 }
-.pyramidXXL{
-    z-index: 95;
-}
-.pyramidXL{
-    z-index: 90;
-}
-.pyramidLG{
-    z-index: 85;
-}
-.pyramidMD{
-    z-index: 80;
-}
-.pyramidSM{
-    z-index: 75;
-}
-.pyramidXS{
-    z-index: 70;
-}
-.pyramidCAP{
-    z-index: 70;
-}
+
+.pyramidXXL { z-index: 95; }
+.pyramidXL { z-index: 90; }
+.pyramidLG { z-index: 85; }
+.pyramidMD { z-index: 80; }
+.pyramidSM { z-index: 75; }
+.pyramidXS { z-index: 70; }
+.pyramidCAP { z-index: 65; }
+
+/* Pyramid Cap Animation */
+
+
 @keyframes turn {
     to{
         transform: translate(-50%, -50%) rotateX(0deg) rotateY(360deg);
     }
 }
+.side, .sideXXL, .sideXL, .sideLG, .sideMD, .sideSM, .sideXS, .sideCAP {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
 
-.side{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backface-visibility: auto;
-    
-}
-.sideXXL {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backface-visibility: auto;
-    transform-style: preserve-3d;
-}
-.sideXL {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backface-visibility: auto;
-    transform-style: preserve-3d;
-}
-.sideLG {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backface-visibility: auto;
-    transform-style: preserve-3d;
-}
-.sideMD {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backface-visibility: auto;
-    transform-style: preserve-3d;
-}
-.sideSM {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backface-visibility: auto;
-    transform-style: preserve-3d;
-}
-.sideXS {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backface-visibility: auto;
-    transform-style: preserve-3d;
-}
-.sideCAP {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backface-visibility: auto;
-    transform-style: preserve-3d;
-}
+/* Pyramid sides transformations */
 
 /* First Pyramid */
 
-.front {
-    transform: translateZ(91px) rotateX(30deg);
-}
-.back {
-    transform: rotateY(180deg) translateZ(91px) rotateX(30deg);
-}
-.left {
-    transform: rotateY(90deg) translateZ(91px) rotateX(30deg);
-}
-.right {
-    transform: rotateY(-90deg) translateZ(91px) rotateX(30deg);
-}
+.front { transform: translateZ(91px) rotateX(30deg); }
+.back { transform: rotateY(180deg) translateZ(91px) rotateX(30deg); }
+.left { transform: rotateY(90deg) translateZ(91px) rotateX(30deg); }
+.right { transform: rotateY(-90deg) translateZ(91px) rotateX(30deg); }
 
 /* Second Pyramid */
 
-.frontXXL {
-    transform: translateZ(68px) rotateX(26deg);
-}
-.backXXL {
-    transform: rotateY(180deg) translateZ(68px) rotateX(26deg);
-}
-.leftXXL {
-    transform: rotateY(90deg) translateZ(68px) rotateX(26deg);
-}
-.rightXXL {
-    transform: rotateY(-90deg) translateZ(68px) rotateX(26deg);
-}
+.frontXXL { transform: translateZ(68px) rotateX(26deg); }
+.backXXL { transform: rotateY(180deg) translateZ(68px) rotateX(26deg); }
+.leftXXL { transform: rotateY(90deg) translateZ(68px) rotateX(26deg); }
+.rightXXL { transform: rotateY(-90deg) translateZ(68px) rotateX(26deg); }
 
 /* Third Pyramid */
 
-.frontXL {
-    transform: translateZ(57px) rotateX(27deg);
-}
-.backXL {
-    transform: rotateY(180deg) translateZ(57px) rotateX(27deg);
-}
-.leftXL {
-    transform: rotateY(90deg) translateZ(57px) rotateX(27deg);
-}
-.rightXL {
-    transform: rotateY(-90deg) translateZ(57px) rotateX(27deg);
-}
+.frontXL { transform: translateZ(57px) rotateX(27deg); }
+.backXL { transform: rotateY(180deg) translateZ(57px) rotateX(27deg); }
+.leftXL { transform: rotateY(90deg) translateZ(57px) rotateX(27deg); }
+.rightXL { transform: rotateY(-90deg) translateZ(57px) rotateX(27deg); }
 
 /* Fourth Pyramid */
 
-.frontLG {
-    transform: translateZ(45px) rotateX(27deg);
-}
-.backLG {
-    transform: rotateY(180deg) translateZ(45px) rotateX(27deg);
-}
-.leftLG {
-    transform: rotateY(90deg) translateZ(45px) rotateX(27deg);
-}
-.rightLG {
-    transform: rotateY(-90deg) translateZ(45px) rotateX(27deg);
-}
+.frontLG { transform: translateZ(45px) rotateX(27deg); }
+.backLG { transform: rotateY(180deg) translateZ(45px) rotateX(27deg); }
+.leftLG { transform: rotateY(90deg) translateZ(45px) rotateX(27deg); }
+.rightLG { transform: rotateY(-90deg) translateZ(45px) rotateX(27deg); }
 
 /* Fifth Pyramid */
 
-.frontMD {
-    transform: translateZ(34px) rotateX(27deg);
-}
-.backMD {
-    transform: rotateY(180deg) translateZ(34px) rotateX(27deg);
-}
-.leftMD {
-    transform: rotateY(90deg) translateZ(34px) rotateX(27deg);
-}
-.rightMD {
-    transform: rotateY(-90deg) translateZ(34px) rotateX(27deg);
-}
+.frontMD { transform: translateZ(34px) rotateX(27deg); }
+.backMD { transform: rotateY(180deg) translateZ(34px) rotateX(27deg); }
+.leftMD { transform: rotateY(90deg) translateZ(34px) rotateX(27deg); }
+.rightMD { transform: rotateY(-90deg) translateZ(34px) rotateX(27deg); }
 
 /* Sixth Pyramid */
 
-.frontSM {
-    transform: translateZ(24px) rotateX(27deg);
-}
-.backSM {
-    transform: rotateY(180deg) translateZ(24px) rotateX(27deg);
-}
-.leftSM {
-    transform: rotateY(90deg) translateZ(24px) rotateX(27deg);
-}
-.rightSM {
-    transform: rotateY(-90deg) translateZ(24px) rotateX(27deg);
-}
+.frontSM { transform: translateZ(24px) rotateX(27deg); }
+.backSM { transform: rotateY(180deg) translateZ(24px) rotateX(27deg); }
+.leftSM { transform: rotateY(90deg) translateZ(24px) rotateX(27deg); }
+.rightSM { transform: rotateY(-90deg) translateZ(24px) rotateX(27deg); }
 
 /* Seventh Pyramid */
 
-.frontXS {
-    transform: translateZ(13px) rotateX(26deg);
-}
-.backXS {
-    transform: rotateY(180deg) translateZ(13px) rotateX(26deg);
-}
-.leftXS {
-    transform: rotateY(90deg) translateZ(13px) rotateX(26deg);
-}
-.rightXS {
-    transform: rotateY(-90deg) translateZ(13px) rotateX(26deg);
-}
+.frontXS { transform: translateZ(13px) rotateX(26deg); }
+.backXS { transform: rotateY(180deg) translateZ(13px) rotateX(26deg); }
+.leftXS { transform: rotateY(90deg) translateZ(13px) rotateX(26deg); }
+.rightXS { transform: rotateY(-90deg) translateZ(13px) rotateX(26deg); }
 
 /* Pyramid Cap */
 
-.frontCAP {
-    transform: translateZ(7px) rotateX(28deg);
-}
-.backCAP {
-    transform: rotateY(180deg) translateZ(7px) rotateX(28deg);
-}
-.leftCAP {
-    transform: rotateY(90deg) translateZ(7px) rotateX(28deg);
-}
-.rightCAP {
-    transform: rotateY(-90deg) translateZ(7px) rotateX(28deg);
-}
+.frontCAP { transform: translateZ(7px) rotateX(28deg); }
+.backCAP { transform: rotateY(180deg) translateZ(7px) rotateX(28deg); }
+.leftCAP { transform: rotateY(90deg) translateZ(7px) rotateX(28deg); }
+.rightCAP { transform: rotateY(-90deg) translateZ(7px) rotateX(28deg); }
 
+/*************************************** Pyramid Content End ***************************************/
+/*************************************** Footer Content End ***************************************/
 
-/*************************************** Table  Start***************************************/
-
-
-.table-outer {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.table li {
-    border-radius: 3px;
-    padding: 5px 30px;
+footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, .3);
-}
-.table .table-header {
-    background-color: rgba(0,132,255,1);
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: white;
-    text-align: center;
-}
-
-.table .col-1 {
-    flex-basis: 40%;
-    text-align: center;
     justify-content: center;
-}
-.table .col-2 {
-    flex-basis: 20%;
-    text-align: center;
-    justify-content: center;
-}
-.table .col-3 {
-    flex-basis: 35%;
-    text-align: center;
-    justify-content: center;
+    gap: 50px;
+    margin: 40px;
 }
 
-.tokens{
-    width: auto;
-    height: 30px;
-    padding: 0 12px;
-    border-radius: 4px;
-}
-@media all and (max-width: 767px) {
-    .table .table-header {
-        display: none;
-   }
-    .table li {
-        display: block;
-   }
-    .table .col {
-        flex-basis: 100%;
-   }
-    .table .col {
-        display: flex;
-        padding: 10px 0;
-   }
-    .table .col:before {
-        color: #6c7a89;
-        padding-right: 10px;
-        content: attr(data-label);
-        flex-basis: 50%;
-        text-align: right;
-   }
+.footer-links a {
+    padding: 3px 4px;
 }
 
-/*************************************** Table  Start***************************************/
-
-.btn{
-    color: white;
-    background-color: rgba(0,132,255,1);
-    border: none;
-    border-radius: 6px;
-    padding: 2px 20px;
-    text-decoration: none;
+.footer-legal p {
+    margin-top: 10px;
+    font-size: 18px;
 }
+/*************************************** Footer Content End ***************************************/
