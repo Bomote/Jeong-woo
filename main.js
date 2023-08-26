@@ -120,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 300);
     });
 
+    
+
+    
     // Add click event listeners to button anchors
     btnAnchors.forEach((anchor, index) => {
         anchor.addEventListener("click", function(event) {
@@ -128,15 +131,45 @@ document.addEventListener("DOMContentLoaded", function() {
                 pyramidElements[clickCount].style.display = "none";
                 anchor.classList.add("inactive");
                 clickCount++;
-    
+
                 if (clickCount === btnAnchors.length) {
                     referralBtn.style.display = "block";
                     referralBtn.classList.add("pulse");
-                    revealBtn.style.display = "none"
+                    revealBtn.style.display = "none";
+                } else {
+                    pulseRemainingPyramids();
                 }
             }
         });
     });
+
+    // Function to remove the pulse class from remaining pyramids
+function removePulseFromRemainingPyramids() {
+    pyramidSizes.forEach((pyramid, index) => {
+        if (index >= clickCount) {
+            const side = document.querySelectorAll(".side" + pyramid.id.substring(7));
+            side[0].classList.remove("pulse");
+            side[1].classList.remove("pulse");
+            side[2].classList.remove("pulse");
+            side[3].classList.remove("pulse");
+        }
+    });
+}
+
+    // Function to apply the pulse animation to remaining pyramids
+function pulseRemainingPyramids() {
+    pyramidSizes.forEach((pyramid, index) => {
+        if (index >= clickCount) {
+            const side = document.querySelectorAll(".side" + pyramid.id.substring(7));
+            side[0].classList.add("pulse");
+            side[1].classList.add("pulse");
+            side[2].classList.add("pulse");
+            side[3].classList.add("pulse");
+        }
+    });
+    // Remove the pulse class from remaining pyramids after 2 seconds
+    setTimeout(removePulseFromRemainingPyramids, 2000);
+}
     
     const numbersPlaceholder = document.getElementById("numbers-placeholder");
 

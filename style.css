@@ -157,6 +157,7 @@ main {
 /***************************** Table Content Start *****************************/
 .table {
     margin-top: 10px;
+    z-index: 21;
 }
 
 table {
@@ -236,18 +237,18 @@ tr {
 }
 /* Pyramid Z-index */
 
-.pyramid, .pyramidXXL, .pyramidXL, .pyramidLG,
+/* .pyramid, .pyramidXXL, .pyramidXL, .pyramidLG,
 .pyramidMD, .pyramidSM, .pyramidXS, .pyramidCAP {
-    z-index: 100; /* Pyramid base z-index */
-}
+    z-index: 100; 
+} */
 
-.pyramidXXL { z-index: 95; }
+/* .pyramidXXL { z-index: 95; }
 .pyramidXL { z-index: 90; }
 .pyramidLG { z-index: 85; }
 .pyramidMD { z-index: 80; }
 .pyramidSM { z-index: 75; }
 .pyramidXS { z-index: 70; }
-.pyramidCAP { z-index: 65; }
+.pyramidCAP { z-index: 65; } */
 
 /* Pyramid Cap Animation */
 
@@ -329,6 +330,23 @@ tr {
 .backCAP { transform: rotateY(180deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
 .leftCAP { transform: rotateY(90deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
 .rightCAP { transform: rotateY(-90deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
+
+.pulse {
+    animation: pulsing 3s linear infinite;
+}
+
+@keyframes pulsing {
+    0%{
+        opacity: 1;
+    }
+     50% {
+        opacity: .55;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 /*************************************** Pyramid Content End ***************************************/
 .btn-shine {
