@@ -219,10 +219,15 @@ tr {
 
 
 @keyframes turn {
-    to{
+    0% {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+    }
+    
+    100% {
         transform: translate(-50%, -50%) rotateX(0deg) rotateY(360deg);
     }
 }
+
 .side, .sideXXL, .sideXL, .sideLG, .sideMD, .sideSM, .sideXS, .sideCAP {
     position: absolute;
     width: 100%;
