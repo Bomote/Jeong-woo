@@ -111,6 +111,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const referralNum = document.createElement("div");
         referralContainer.appendChild(referralNum);
 
+        referralNum.classList.add("referral-num");
+
         // Wait for 1 second and then update content
         setTimeout(function() {
             referralNum.textContent = "12345"; // Placeholder numbers

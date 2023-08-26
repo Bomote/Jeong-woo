@@ -108,6 +108,7 @@ main {
 
 .glass-top {
     display: flex;
+    z-index: 1;
     justify-content: space-around;
 }
 
@@ -123,14 +124,17 @@ main {
     align-items: center;
     text-align: center;
     gap: 10px;
+    mix-blend-mode: difference;
 }
 .glass-top div h3 {
     font-size: 24px;
     letter-spacing: 3px;
+    mix-blend-mode: difference;
 }
 .glass-top div p {
     font-size: 12px;
     letter-spacing: 2px;
+    mix-blend-mode: difference;
 }
 
 .glass-top div:hover {
@@ -146,6 +150,20 @@ main {
     align-items: center;
     margin-bottom: 30px;
     margin-left: 50px;
+}
+
+.filler {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    border-radius: 12px;
+    z-index: -2;
+    background: rgb(17,75,95);
+    background: -moz-linear-gradient(0deg, rgba(17,75,95,1) 0%, rgba(244,91,105,.3) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(17,75,95,1) 0%, rgba(244,91,105,.3) 100%);
+    background: linear-gradient(0deg, rgba(17,75,95,1) 0%, rgba(244,91,105,.3) 100%);
 }
 
 /***************************** Table Content Start *****************************/
@@ -327,16 +345,19 @@ tr {
 /*************************************** Pyramid Content End ***************************************/
 
 
-.reveal{
+.reveal {
+    display: flex;
     margin: 20px;
-    margin-left: 280px;
+    width: 85%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 #referral-btn {
     display: none;
-    margin-left: 230px;
     padding: 12px 20px;
-    background: rgb(17, 75, 95);
+    background: #114b5f;
     color: #E4FDE1;
     border: none;
     border-radius: 3px;
@@ -345,6 +366,13 @@ tr {
 #referral-btn:hover {
     background: rgba(17, 75, 95, 0.7);
 }
+
+.referral-num {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #456990;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
