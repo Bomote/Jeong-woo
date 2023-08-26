@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "pyramidXL", points: "190,100 210,100 300,300 99,300" },
         { id: "pyramidXXL", points: "186,80 214,80 320,323 80,323" },
         { id: "pyramid", points: "176,70 224,70 369,360 31,360" },
-        { id: "pyramidCAP", points: "200,190 200,190 210,210 190,210" }
+        //{ id: "pyramidCAP", points: "200,190 200,190 210,210 190,210" },
+        { id: "pyramidCAP", points: "196,200 204,200 224,240 176,240" }
     ];
 
     // Loop through each pyramid size and create pyramid sides

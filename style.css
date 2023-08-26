@@ -124,6 +124,14 @@ main {
     text-align: center;
     gap: 10px;
 }
+.glass-top div h3 {
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+.glass-top div p {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
 
 .glass-top div:hover {
     background-color: rgba(17, 75, 95, 0.25);
@@ -317,10 +325,10 @@ tr {
 
 /* Pyramid Cap */
 
-.frontCAP { transform: translateZ(7px) rotateX(28deg); }
-.backCAP { transform: rotateY(180deg) translateZ(7px) rotateX(28deg); }
-.leftCAP { transform: rotateY(90deg) translateZ(7px) rotateX(28deg); }
-.rightCAP { transform: rotateY(-90deg) translateZ(7px) rotateX(28deg); }
+.frontCAP { transform: translateZ(86px) rotateX(28deg) translateY(-169px); }
+.backCAP { transform: rotateY(180deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
+.leftCAP { transform: rotateY(90deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
+.rightCAP { transform: rotateY(-90deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
 
 /*************************************** Pyramid Content End ***************************************/
 /*************************************** Footer Content End ***************************************/
