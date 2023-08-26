@@ -106,6 +106,32 @@ main {
     margin-top: 140px;
 }
 
+.glass-top {
+    display: flex;
+    justify-content: space-around;
+}
+
+.glass-top div {
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(4px) saturate(83%);
+    -webkit-backdrop-filter: blur(4px) saturate(83%);
+    background-color: rgba(17, 75, 95, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(17, 75, 95, 0.3);
+    padding: 30px 60px;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.glass-top div:hover {
+    background-color: rgba(17, 75, 95, 0.25);
+    border: 1px solid rgba(17, 75, 95, 0.25);
+    transform: rotateZ(1deg);
+    cursor: pointer;
+}
+
 .sponsorable {
     display: flex;
     gap: 10px;
@@ -116,7 +142,7 @@ main {
 
 /***************************** Table Content Start *****************************/
 .table {
-    margin-top: 90px;
+    margin-top: 10px;
 }
 
 table {
@@ -139,7 +165,7 @@ tr {
 }
 
 .table-head {
-    background-color: #114B5F;
+    background-color: rgb(17, 75, 95);
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -180,7 +206,7 @@ tr {
     right: 10%;
     perspective: 800px;
     perspective-origin: 50% calc(50% - 300px);
-    animation: bobbing 10s linear infinite;
+    animation: bobbing 10s ease-in-out infinite;
     animation-direction: alternate;
 }
 
