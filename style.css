@@ -176,10 +176,18 @@ tr {
 /*************************************** Pyramid Content Start ***************************************/
 .pyramid-container{
     position: absolute;
-    top: 50%;
+    top: 65%;
     right: 10%;
     perspective: 800px;
     perspective-origin: 50% calc(50% - 300px);
+    animation: bobbing 10s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes bobbing {
+    to{
+        top: 40%;
+    }
 }
 
 .box{
