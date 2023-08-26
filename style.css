@@ -152,19 +152,6 @@ main {
     margin-left: 50px;
 }
 
-.filler {
-    position: absolute;
-    top: 0%;
-    right: 0;
-    width: 450px;
-    height: 100%;
-    border-radius: 12px;
-    z-index: -2;
-    background: rgb(17,75,95);
-    background: -moz-linear-gradient(0deg, rgba(17,75,95,1) 0%, rgba(244,91,105,.3) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(17,75,95,1) 0%, rgba(244,91,105,.3) 100%);
-    background: linear-gradient(0deg, rgba(17,75,95,1) 0%, rgba(244,91,105,.3) 100%);
-}
 
 /***************************** Table Content Start *****************************/
 .table {
@@ -232,7 +219,7 @@ tr {
 
 @keyframes bobbing {
     to{
-        top: 40%;
+        top: 50%;
     }
 }
 

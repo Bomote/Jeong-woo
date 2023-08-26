@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             polygon.setAttribute("filter", "url(#glow)");
 
             polygon.setAttribute("fill", "none");
-            polygon.setAttribute("stroke", "#114B5F");
+            polygon.setAttribute("stroke", "#969696");
             polygon.setAttribute("stroke-width", "4");
 
             // Append the polygon to the SVG and the SVG to the side
