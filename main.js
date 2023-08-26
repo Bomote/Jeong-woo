@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             polygon.setAttribute("filter", "url(#glow)");
 
             polygon.setAttribute("fill", "none");
-            polygon.setAttribute("stroke", "#969696");
+            polygon.setAttribute("stroke", "#114b5f");
             polygon.setAttribute("stroke-width", "4");
 
             // Append the polygon to the SVG and the SVG to the side
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "pyramidLG", points: "193,120 207,120 280,280 121,280" },
         { id: "pyramidXL", points: "190,100 210,100 300,300 99,300" },
         { id: "pyramidXXL", points: "186,80 214,80 320,323 80,323" },
-        { id: "pyramid", points: "176,70 224,70 369,360 31,360" },
+        { id: "pyramid", points: "176,70 224,70 360,340 39,340" },
         //{ id: "pyramidCAP", points: "200,190 200,190 210,210 190,210" },
         { id: "pyramidCAP", points: "196,200 204,200 224,240 176,240" }
     ];

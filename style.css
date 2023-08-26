@@ -97,7 +97,8 @@ main {
 .glass {
     backdrop-filter: blur(4px) saturate(83%);
     -webkit-backdrop-filter: blur(4px) saturate(83%);
-    background-color: rgba(244, 91, 105, 0.3);
+    background-color: rgba(30,57,126, 0.3);
+    /* background-color: rgba(244, 91, 105, 0.3); */
     border-radius: 12px;
     border: 1px solid rgba(244, 91, 105, 0.3);
     width: 85%;
@@ -330,7 +331,28 @@ tr {
 .rightCAP { transform: rotateY(-90deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
 
 /*************************************** Pyramid Content End ***************************************/
+.btn-shine {
+  color: #ffffff;
+  background: linear-gradient(to right, #456990 0, rgb(255, 255, 255) 10%, #456990 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 10s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+}  
 
+@keyframes shine{
+  0%{
+        background-position: -200px;
+    }
+  60%{
+        background-position: 280px
+    }
+  100%{
+        background-position: 580px
+    }
+}
 
 .reveal {
     display: flex;
@@ -359,23 +381,6 @@ tr {
     letter-spacing: 2px;
     color: #456990;
 }
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.pulse {
-    animation: pulse 1s infinite;
-}
-
 /*************************************** Footer Content Start ***************************************/
 
 footer {
