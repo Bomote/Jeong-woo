@@ -98,10 +98,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Get button anchors and pyramid elements
     const btnAnchors = document.querySelectorAll(".btn");
+    const referralBtn = document.getElementById("referral-btn");
+    const revealBtn = document.getElementById("reveal-btn")
     const pyramidElements = pyramidSizes.map(size => document.getElementById(size.id));
 
     // Click count for button interactions
     let clickCount = 0;
+
+    referralBtn.addEventListener("click",function () {
+
+        const referralContainer = document.getElementById("reveal");
+        const referralNum = document.createElement("div");
+        referralContainer.appendChild(referralNum);
+
+        // Wait for 1 second and then update content
+        setTimeout(function() {
+            referralNum.textContent = "12345"; // Placeholder numbers
+            referralBtn.style.display = "none"; // Hide the referral button
+        }, 300);
+    });
 
     // Add click event listeners to button anchors
     btnAnchors.forEach((anchor, index) => {
@@ -111,7 +126,27 @@ document.addEventListener("DOMContentLoaded", function() {
                 pyramidElements[clickCount].style.display = "none";
                 anchor.classList.add("inactive");
                 clickCount++;
+    
+                if (clickCount === btnAnchors.length) {
+                    referralBtn.style.display = "block";
+                    referralBtn.classList.add("pulse");
+                    revealBtn.style.display = "none"
+                }
             }
         });
     });
+    
+    const numbersPlaceholder = document.getElementById("numbers-placeholder");
+
+    referralBtn.addEventListener("click", function() {
+        // Apply the pulsing animation class
+        referralBtn.classList.add("pulse");
+
+        // Wait for 1 second and then update content
+        setTimeout(function() {
+            numbersPlaceholder.textContent = "12345"; // Placeholder numbers
+            referralBtn.style.display = "none"; // Hide the referral button
+        }, 1000);
+    });
+
 });

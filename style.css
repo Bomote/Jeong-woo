@@ -199,13 +199,7 @@ tr {
 
 /***************************** Table Content End *****************************/
 
-.reveal-btn{
-    margin: 70px;
-}
 
-#referral-btn {
-    display: none;
-}
 /*************************************** Main Content End ***************************************/
 /*************************************** Pyramid Content Start ***************************************/
 .pyramid-container{
@@ -331,7 +325,36 @@ tr {
 .rightCAP { transform: rotateY(-90deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
 
 /*************************************** Pyramid Content End ***************************************/
-/*************************************** Footer Content End ***************************************/
+
+
+.reveal{
+    margin: 20px;
+    margin-left: 280px;
+}
+
+#referral-btn {
+    display: none;
+    margin-left: 250px;
+    padding: 8px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 1s infinite;
+}
+
+/*************************************** Footer Content Start ***************************************/
 
 footer {
     display: flex;
