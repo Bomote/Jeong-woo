@@ -157,7 +157,8 @@ main {
 /***************************** Table Content Start *****************************/
 .table {
     margin-top: 10px;
-    z-index: 21;
+    z-index: 1;
+    position: relative;
 }
 
 table {
@@ -217,6 +218,7 @@ tr {
     perspective-origin: 50% calc(50% - 300px);
     animation: bobbing 10s ease-in-out infinite;
     animation-direction: alternate;
+    z-index: 0;
 }
 
 @keyframes bobbing {
@@ -340,7 +342,7 @@ tr {
         opacity: 1;
     }
      50% {
-        opacity: .55;
+        opacity: 0.4;
     }
     100% {
         opacity: 1;
