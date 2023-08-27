@@ -435,13 +435,11 @@ footer {
 
 
 /*************************************** Media Queries Start ***************************************/
-.fa-bars {
+i {
     display: none;
 }
 
-.fa-xmark{
- display: none;   
-}
+
 
 @media screen and (max-width: 820px){
     .sponsorable {
