@@ -185,3 +185,23 @@ function pulseRemainingPyramids() {
     });
 
 });
+
+const toggleNav = () => {
+    const burgerOpen = document.querySelector('.fa-bars');
+    const navbar = document.querySelector('.navbar');
+    const burgerClose = document.querySelector('.fa-xmark')
+
+    // Toggle navigation links when the hamburger icon is clicked
+    burgerOpen.addEventListener('click', () => {
+        navbar.style.display = "flex";
+        burgerOpen.style.display = "none"
+        burgerClose.style.display = "block"
+    });
+    burgerClose.addEventListener('click', () => {
+        navbar.style.display = "none";
+        burgerOpen.style.display = "block"
+        burgerClose.style.display = "none"
+    });
+}
+
+toggleNav();

@@ -9,13 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d93fb96b59.js" crossorigin="anonymous"></script>
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <script src="https://kit.fontawesome.com/d93fb96b59.js" crossorigin="anonymous"></script>
     <title>코드 받기</title>
 </head>
 <body>
     <header>
         <nav>
-            <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" srcset="" width="auto" height="50px">
+            <picture>
+                <!-- Load this image on screens with a width up to 480px -->
+                <source media="(max-width: 1023px)" srcset="assets/logo-small.png">
             
+                <!-- Load the default image on other screens -->
+                <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" width="auto" height="50px">
+            </picture>
+
             <ul class="navbar">
                 <li><a href="">HOME</a></li>
                 <li>
@@ -59,51 +66,36 @@
                         </div>
                     </div>
                 </li>
+
+                <div class="login">
+                    <button class="dropbtn" id="login">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/itmsnfur.json"
+                            trigger="hover"
+                            colors="outline:#121331,primary:#b26836,secondary:#4bb3fd,tertiary:#f9c9c0"
+                            style="width:40px;height:40px">
+                        </lord-icon>
+                    </button> |
+                    <button class="dropbtn" id="logout">로그아웃</button>
+                </div>
             </ul>
 
-            <div class="login">
-                <button class="dropbtn" id="login">
-                    <lord-icon
-                        src="https://cdn.lordicon.com/itmsnfur.json"
-                        trigger="hover"
-                        colors="outline:#121331,primary:#b26836,secondary:#4bb3fd,tertiary:#f9c9c0"
-                        style="width:40px;height:40px">
-                    </lord-icon>
-                </button> |
-                <button class="dropbtn" id="logout">로그아웃</button>
-            </div>
+            
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark fa-beat"></i>
         </nav>
     </header>
     
     <main>
         <div class="glass">
-            <div class="glass-top">
-                <h2>코드 받기</h2>
-                <div class="status">
-                    <img src="assets/Geometry-lt.png" alt="" srcset="" width="80px" height="80px">
-                    <h3>30000</h3>
-                    <p>donations recieved</p>
-                </div>
-                <div class="status">
-                    <img src="assets/Geometry-md.png" alt="" srcset="" width="80px" height="80px">
-                    <h3>2000</h3>
-                    <p>sponsors joined</p>
-                </div>
-                <div class="status">
-                    <img src="assets/Geometry-rt.png" alt="" srcset="" width="80px" height="80px">
-                    <h3>50000</h3>
-                    <p>lives impacted</p>
-                </div>
+            <div class="sponsorable">
+                <p class="sponsorables">
+                    후원가능 ALT
+                    <span id="token-count">0</span>
+                    ALT
+                </p>
             </div>
-            
             <div class="table">
-                <div class="sponsorable">
-                    <p class="sponsorables">
-                        후원가능 ALT
-                        <span id="token-count">0</span>
-                        ALT
-                    </p>
-                </div>
                 <table>
                     <tr class="table-head">
                         <th class="col-1">ID</th>
@@ -137,7 +129,8 @@
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
-                        </td>                        <td class="col-3">
+                        </td>                        
+                        <td class="col-3">
                             <input type="number" name="token" id="token"><span>ALT</span>
                         </td>
                     </tr>
@@ -152,7 +145,8 @@
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
-                        </td>                        <td class="col-3">
+                        </td>                        
+                        <td class="col-3">
                             <input type="number" name="token" id="token"><span>ALT</span>
                         </td>
                     </tr>
@@ -167,7 +161,8 @@
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
-                        </td>                        <td class="col-3">
+                        </td>                       
+                        <td class="col-3">
                             <input type="number" name="token" id="token"><span>ALT</span>
                         </td>
                     </tr>
@@ -182,7 +177,8 @@
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
-                        </td>                        <td class="col-3">
+                        </td>                        
+                        <td class="col-3">
                             <input type="number" name="token" id="token"><span>ALT</span>
                         </td>
                     </tr>
@@ -197,7 +193,8 @@
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
-                        </td>                        <td class="col-3">
+                        </td>                        
+                        <td class="col-3">
                             <input type="number" name="token" id="token"><span>ALT</span>
                         </td>
                     </tr>
@@ -226,8 +223,13 @@
         <div class="footer-logo">
             <div class="logo">
                 <a href="">
-                    <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" srcset="" width="auto" height="50px">
-                </a>
+                    <picture>
+                        <!-- Load this image on screens with a width up to 480px -->
+                        <source media="(max-width: 1023px)" srcset="assets/logo-small.png">
+                    
+                        <!-- Load the default image on other screens -->
+                        <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" width="auto" height="50px">
+                    </picture>                </a>
             </div>
         </div>
         <div class="footer-content">
@@ -238,7 +240,7 @@
             </div>
             <div class="footer-legal">
                 <p>Alpha Triangie <span>|</span> 사업자번호 :  <span>|</span>  대표 :  <span>|</span>  </p>
-                <p>Copyright ⓒ2023 Alpha Triangie All Rights Reserved.</p>
+                <p class="copyright">Copyright ⓒ2023 Alpha Triangie All Rights Reserved.</p>
             </div>
         </div>
     </footer>
