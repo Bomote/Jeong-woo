@@ -25,6 +25,10 @@ span {
     padding: 8px;
 }
 /*************************************** Navbar  Start***************************************/
+header{
+    min-height: 8vh;
+}
+
 nav {
   display: flex;
   margin: 25px 40px;
@@ -42,6 +46,10 @@ nav ul {
     text-align: center;
     justify-content: space-around;
     overflow: hidden;
+}
+
+.mobile-nav-toggle{
+    display: none;
 }
 
 .dropdown {
@@ -492,7 +500,7 @@ table input {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
     -webkit-animation-name: fadeIn; /* Fade in the background */
     -webkit-animation-duration: 1.1s;
     animation-name: fadeIn;
@@ -519,7 +527,7 @@ table input {
 
   .modal-header {
     padding: 15px 16px;
-    background-color: #114b5f;
+    background-color: #ffba08;
     color: white;
     border-radius: 12px 12px 0 0;
     display: flex;
@@ -540,7 +548,7 @@ table input {
     padding: 8px 22px;
     -webkit-appearance: none;
     appearance: none;
-    background-color: #114b5f;
+    background-color: #ffba08;
     color: #fff;
     border-radius: 4px;
     border: none;
@@ -610,102 +618,72 @@ footer {
 
 
 /*************************************** Media Queries Start ***************************************/
-i {
-    display: none;
-}
 
 
 
-@media screen and (max-width: 820px){
-    .sponsorable {
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        margin-top: 10px;
-        margin-bottom: 30px;
-        margin-left: 5px;
-    }
 
-    .glass{
-        height: 100%;
-        padding-top: 70px;
-    }
+@media (max-width: 81em) {
+    .navbar {
+        position: fixed;
+        z-index: 100;
+        inset: 0 0 0 30%;
+        padding: min(20vh, 10rem) 2em;
 
-    .table {
-        margin-top: 0px;
-    }
-
-    table input{
-        width: 100%;
-    }
-
-    table {
-        font-size: 14px;
-        width: 500px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .col-3 {
-        display: flex;
-    }
-
-    .col-3 span{
-        font-size: 10px;
-    }
-
-    footer {
         flex-direction: column;
-        gap: 20px;
-    }
+        gap: 2em;
+        background: hsl(0, 0%, 0% / 0.5);
+        backdrop-filter: blur(1rem);
 
-    .footer-legal .copyright {
-        font-size: 14px;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
     }
     
-}
-@media screen and (max-width: 1340px){
-
-    .navbar{
-        position: absolute;
-        top: 12vh;
-        right: 0;
-        height: 82vh;
-        z-index: 10;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background: #028090;
-        padding: 15px 40px;
-        width: 65%;
+    .navbar[data-visible="true"] {
+        transform: translateX(0%);
     }
 
-    .fa-bars {
-        display: block;
-    }
-    .fa-xmark{
-        display: none;   
-       }
-       
-
-    .show-navbar {
-    display: flex;
-    }
-    .glass {
-        width: 100%;
-    }
-
-    .pyramid-container {
-        top: 6%;
-        right: 0;
-    }
-
-    @keyframes bobbing {
-        to{
-            top: 20%;
+    @supports (backdrop-filter: blur(1rem)) {
+        .navbar {
+            background: hsl(0, 0%, 100% / 0.1);
+            backdrop-filter: blur(1rem);
         }
     }
+    
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        background-image: url(assets/bars-solid.svg);
+        background-repeat: no-repeat;
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+    }
 
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(assets/xmark-solid.svg);
+    }
+
+
+    .logo {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .glass {
+        width: 100%;
+        height: 100%;
+    }
 }
+
+
+  
+    
+
+
 /*************************************** Media Queries End ***************************************/
 

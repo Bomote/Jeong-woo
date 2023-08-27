@@ -10,20 +10,25 @@
     <script src="https://kit.fontawesome.com/d93fb96b59.js" crossorigin="anonymous"></script>
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script src="https://kit.fontawesome.com/d93fb96b59.js" crossorigin="anonymous"></script>
+    <script src="nav.js" defer></script>
     <title>코드 받기</title>
 </head>
 <body>
     <header>
         <nav>
-            <picture>
-                <!-- Load this image on screens with a width up to 480px -->
-                <source media="(max-width: 1023px)" srcset="assets/logo-small.png">
-            
-                <!-- Load the default image on other screens -->
-                <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" width="auto" height="50px">
-            </picture>
-
-            <ul class="navbar">
+            <a href="#" class="logo">
+                <picture>
+                    <!-- Load this image on screens with a width up to 480px -->
+                    <source media="(max-width: 1023px)" srcset="assets/logo-small.png">
+                
+                    <!-- Load the default image on other screens -->
+                    <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" width="auto" height="50px">
+                </picture>
+            </a>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul id="primary-navigation" data-visible="false" class="navbar">
                 <li><a href="">HOME</a></li>
                 <li>
                     <div class="dropdown">
@@ -253,7 +258,8 @@
                     
                         <!-- Load the default image on other screens -->
                         <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" width="auto" height="50px">
-                    </picture>                </a>
+                    </picture>                
+                </a>
             </div>
         </div>
         <div class="footer-content">
