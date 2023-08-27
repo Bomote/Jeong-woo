@@ -212,6 +212,25 @@ tr {
     flex-basis: 35%;
 }
 
+table input {
+    border: 1px solid #114b5f;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 4px;
+  border-radius: 3px;
+  min-width: 70px;
+  font-size: 14px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(17, 75, 95, 0.55);
+    padding-left: 10px;
+  }
+  
+
 /***************************** Table Content End *****************************/
 
 
@@ -246,22 +265,6 @@ tr {
     transform-style: preserve-3d;
     animation: turn 30s linear infinite;
 }
-/* Pyramid Z-index */
-
-/* .pyramid, .pyramidXXL, .pyramidXL, .pyramidLG,
-.pyramidMD, .pyramidSM, .pyramidXS, .pyramidCAP {
-    z-index: 100; 
-} */
-
-/* .pyramidXXL { z-index: 95; }
-.pyramidXL { z-index: 90; }
-.pyramidLG { z-index: 85; }
-.pyramidMD { z-index: 80; }
-.pyramidSM { z-index: 75; }
-.pyramidXS { z-index: 70; }
-.pyramidCAP { z-index: 65; } */
-
-/* Pyramid Cap Animation */
 
 
 @keyframes turn {
@@ -529,6 +532,7 @@ footer {
             top: 20%;
         }
     }
+
 }
 /*************************************** Media Queries End ***************************************/
 

@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnAnchors = document.querySelectorAll(".btn");
     const referralBtn = document.getElementById("referral-btn");
     const revealBtn = document.getElementById("reveal-btn")
-    const pyramidElements = pyramidSizes.map(size => document.getElementById(size.id));
+    const pyramidElements = pyramidSizes.map(size => document.getElementById(size.id)); 
 
     // Click count for button interactions
     let clickCount = 0;
@@ -123,25 +123,47 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
     
-    // Add click event listeners to button anchors
-    btnAnchors.forEach((anchor, index) => {
-        anchor.addEventListener("click", function(event) {
-            event.preventDefault();
-            if (clickCount <= index) {
-                pyramidElements[clickCount].style.display = "none";
-                anchor.classList.add("inactive");
-                clickCount++;
+  // Function to add pyramids back with a delay and interval
+const addBackPyramids = () => {
+    let index = clickCount - 1; // Index of the last removed pyramid
+    const interval = 7500; // Interval in milliseconds (3 seconds)
 
-                if (clickCount === btnAnchors.length) {
-                    referralBtn.style.display = "block";
-                    referralBtn.classList.add("pulse");
-                    revealBtn.style.display = "none";
-                } else {
-                    pulseRemainingPyramids();
-                }
+    const addPyramidInterval = setInterval(() => {
+        if (index >= 0) {
+            pyramidElements[index].style.display = "flex";
+            btnAnchors[index].classList.remove("inactive");
+            index--;
+        } else {
+            clearInterval(addPyramidInterval); // Stop the interval
+            referralBtn.style.display = "none"; // Hide the referral button
+            revealBtn.style.display = "block"; // Show the reveal button
+        }
+    }, interval);
+};
+
+// Add click event listeners to button anchors
+btnAnchors.forEach((anchor, index) => {
+    anchor.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (clickCount <= index) {
+            pyramidElements[clickCount].style.display = "none";
+            anchor.classList.add("inactive");
+            clickCount++;
+
+            if (clickCount === btnAnchors.length) {
+                referralBtn.style.display = "block";
+                referralBtn.classList.add("pulse");
+                revealBtn.style.display = "none";
+                            
+                addBackPyramids();
+                
+            } else {
+                pulseRemainingPyramids();
             }
-        });
+        }
     });
+});
+
 
     // Function to remove the pulse class from remaining pyramids
 function removePulseFromRemainingPyramids() {
