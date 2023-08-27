@@ -103,9 +103,9 @@
                         <td class="col-2">
                             <a href="" class="btn">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/jryilvyz.json"
+                                    src="https://cdn.lordicon.com/endvmymh.json"
                                     trigger="hover"
-                                    colors="primary:#F45B69,secondary:#114B5F"
+                                    colors="outline:#fb5607,primary:#3a86ff,secondary:#ffba08"
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
@@ -122,9 +122,9 @@
                         <td class="col-2">
                             <a href="" class="btn">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/jryilvyz.json"
+                                    src="https://cdn.lordicon.com/endvmymh.json"
                                     trigger="hover"
-                                    colors="primary:#F45B69,secondary:#114B5F"
+                                    colors="outline:#fb5607,primary:#3a86ff,secondary:#ffba08"
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
@@ -141,9 +141,9 @@
                         <td class="col-2">
                             <a href="" class="btn">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/jryilvyz.json"
+                                    src="https://cdn.lordicon.com/endvmymh.json"
                                     trigger="hover"
-                                    colors="primary:#F45B69,secondary:#114B5F"
+                                    colors="outline:#fb5607,primary:#3a86ff,secondary:#ffba08"
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
@@ -160,9 +160,9 @@
                         <td class="col-2">
                             <a href="" class="btn">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/jryilvyz.json"
+                                    src="https://cdn.lordicon.com/endvmymh.json"
                                     trigger="hover"
-                                    colors="primary:#F45B69,secondary:#114B5F"
+                                    colors="outline:#fb5607,primary:#3a86ff,secondary:#ffba08"
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
@@ -179,9 +179,9 @@
                         <td class="col-2">
                             <a href="" class="btn">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/jryilvyz.json"
+                                    src="https://cdn.lordicon.com/endvmymh.json"
                                     trigger="hover"
-                                    colors="primary:#F45B69,secondary:#114B5F"
+                                    colors="outline:#fb5607,primary:#3a86ff,secondary:#ffba08"
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
@@ -198,9 +198,9 @@
                         <td class="col-2">
                             <a href="" class="btn">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/jryilvyz.json"
+                                    src="https://cdn.lordicon.com/endvmymh.json"
                                     trigger="hover"
-                                    colors="primary:#F45B69,secondary:#114B5F"
+                                    colors="outline:#fb5607,primary:#3a86ff,secondary:#ffba08"
                                     style="width:30px;height:30px">
                                 </lord-icon>
                             </a>
@@ -217,8 +217,18 @@
             </div>
             
             <div class="reveal" id="reveal">
-                <p class="reveal-btn btn-shine" id="reveal-btn">후원하고 장금을 해제하세요 <span>Alpha Trangle</span> 코드를 공개하기 위해!</p>
-                <button id="referral-btn">코드 받기</button>
+                <p class="btn-shine" id="reveal-btn">후원하고 장금을 해제하세요 <span>Alpha Trangle</span> 코드를 공개하기 위해!</p>
+                <button id="referral-btn" class="bubbly-button" >코드 받기</button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Your recommendation code</h3>  
+                            <i class="fa-regular fa-circle-xmark fa-spin close"></i>                        
+                        </div>
+                        <h3 id="referral-code">2345-6789-0123</h3>
+                        <button id="copy" onclick="copyToClipboard(document.getElementById('referral-code'))">Copy</button>
+                    </div>
+                </div>
             </div>
 
             <div class="pyramid-container">
@@ -253,8 +263,8 @@
                 <a href="">개인정보수집</a>
             </div>
             <div class="footer-legal">
-                <p>Alpha Triangie <span>|</span> 사업자번호 :  <span>|</span>  대표 :  <span>|</span>  </p>
-                <p class="copyright">Copyright ⓒ2023 Alpha Triangie All Rights Reserved.</p>
+                <p>Alpha Triangle <span>|</span> 사업자번호 :  <span>|</span>  대표 :  <span>|</span>  </p>
+                <p class="copyright">Copyright ⓒ2023 Alpha Triangle All Rights Reserved.</p>
             </div>
         </div>
     </footer>
