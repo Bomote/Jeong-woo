@@ -122,11 +122,11 @@ const addBackPyramids = () => {
 const referralBtn = document.getElementById('referral-btn');
 const referralText = document.getElementById('reveal-btn');
 
-
 // Add click event listeners to button anchors
 btnAnchors.forEach((anchor, index) => {
     anchor.addEventListener("click", function(event) {
         event.preventDefault();
+        handleClick(event);
         if (clickCount <= index) {
             pyramidElements[clickCount].style.display = "none";
             anchor.classList.add("inactive");
@@ -232,3 +232,20 @@ function copyToClipboard(element) {
       modal.style.display = "none";
   }
   
+
+// Get all the buttons with the class 'btn'
+const buttons = document.querySelectorAll('.btn');
+
+// Function to add classes to the water div when a button is clicked
+function handleClick(event) {
+  event.preventDefault();
+
+  const tableRow = event.target.closest('.table-row');
+  const waterDiv = tableRow.querySelector('.water');
+
+  waterDiv.classList.add('fill', 'wave');
+}
+
+buttons.forEach(button => {
+  button.addEventListener('click', handleClick);
+});
