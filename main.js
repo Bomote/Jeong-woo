@@ -1,71 +1,71 @@
 // Wait for the DOM content to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-        // Function to create an SVG element
+     // Function to create an SVG element
     function createSvg() {
-            // Create and configure an SVG element
-        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute("width", "100%");
-        svg.setAttribute("height", "100%");
-        svg.setAttribute("viewBox", "0 0 100% 100%");
-        return svg;
+      // Create and configure an SVG element
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("width", "100%");
+      svg.setAttribute("height", "100%");
+      svg.setAttribute("viewBox", "0 0 100% 100%");
+      return svg;
     }
 
-    
-        // Function to create nested pyramid sides
-    function createNestedPyramid(length, className, parentID, points) {
-                // Get the parent element by its ID
-        const parentElement = document.getElementById(parentID);
+    // Function to create nested pyramid sides
+    function createNestedPyramid(length, className, parentID, d) {
+      // Get the parent element by its ID
+      const parentElement = document.getElementById(parentID);
 
-        // Loop to create the specified number of sides
-        for (let i = 0; i < length; i++) {
-                // Create a side element and add a class
-            const side = document.createElement("div");
-            side.classList.add(className);
+      // Loop to create the specified number of sides
+      for (let i = 0; i < length; i++) {
+          // Create a side element and add a class
+          const side = document.createElement("div");
+          side.classList.add(className);
 
-            // Create an SVG element
-            const svg = createSvg();
-            // Create a polygon element and set attributes
-            const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-            polygon.setAttribute("points", points);
+          // Create an SVG element
+          const svg = createSvg();
+          // Create a path element and set the "d" attribute
+          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          path.setAttribute("d", d);
 
-            // Add the glow effect to the stroke using a filter
-            polygon.setAttribute("filter", "url(#glow)");
+          // Add the glow effect to the stroke using a filter
+          path.setAttribute("filter", "url(#glow)");
 
-            polygon.setAttribute("fill", "none");
-            polygon.setAttribute("stroke", "#114b5f");
-            polygon.setAttribute("stroke-width", "4");
+          path.setAttribute("fill", "none");
+          path.setAttribute("stroke", "#114b5f");
+          path.setAttribute("stroke-width", "4");
 
-            // Append the polygon to the SVG and the SVG to the side
-            svg.appendChild(polygon);
-            side.appendChild(svg);
+          // Append the path to the SVG and the SVG to the side
+          svg.appendChild(path);
+          side.appendChild(svg);
 
-            // Append the side to the parent element
-            parentElement.appendChild(side);
-        }
+          // Append the side to the parent element
+          parentElement.appendChild(side);
+      }
     }
 
-    // Array of pyramid sizes with their IDs and points
+    // Array of pyramid sizes with their IDs and paths
     const pyramidSizes = [
-        { id: "pyramidXS", points: "197,180 203,180 220,220 180,220" },
-        { id: "pyramidSM", points: "196,160 204,160 240,240 160,240" },
-        { id: "pyramidMD", points: "195,140 205,140 260,260 140,260" },
-        { id: "pyramidLG", points: "193,120 207,120 280,280 121,280" },
-        { id: "pyramidXL", points: "190,100 210,100 300,300 99,300" },
-        { id: "pyramidXXL", points: "186,80 214,80 320,323 80,323" },
-        { id: "pyramid", points: "176,70 224,70 360,340 39,340" },
-        //{ id: "pyramidCAP", points: "200,190 200,190 210,210 190,210" },
-        { id: "pyramidCAP", points: "196,200 204,200 224,240 176,240" }
+      { id: "pyramidXS", d: "M 197 180 L 203 180 L 220 220 L 180 220 Z" },
+      { id: "pyramidSM", d: "M 196 160 L 204 160 L 240 240 L 160 240 Z" },
+      { id: "pyramidMD", d: "M 195 140 L 205 140 L 260 260 L 140 260 Z" },
+      { id: "pyramidLG", d: "M 193 120 L 207 120 L 280 280 L 121 280 Z" },
+      { id: "pyramidXL", d: "M 190 100 L 210 100 L 300 300 L 99 300 Z" },
+      { id: "pyramidXXL", d: "M 186 80 L 214 80 L 320 323 L 80 323 Z" },
+      { id: "pyramid", d: "M 176 70 L 224 70 L 360 340 L 39 340 Z" },
+      { id: "pyramidCAP", d: "M 196 200 L 204 200 L 224 240 L 176 240 Z" }
     ];
 
     // Loop through each pyramid size and create pyramid sides
     pyramidSizes.forEach(size => {
-        createNestedPyramid(4, "side" + size.id.substring(7), size.id, size.points);
-        const side = document.querySelectorAll(".side" + size.id.substring(7));
-        side[0].classList.add("front" + size.id.substring(7));
-        side[1].classList.add("back" + size.id.substring(7));
-        side[2].classList.add("left" + size.id.substring(7));
-        side[3].classList.add("right" + size.id.substring(7));
+      createNestedPyramid(4, "side" + size.id.substring(7), size.id, size.d);
+      const side = document.querySelectorAll(".side" + size.id.substring(7));
+      side[0].classList.add("front" + size.id.substring(7));
+      side[1].classList.add("back" + size.id.substring(7));
+      side[2].classList.add("left" + size.id.substring(7));
+      side[3].classList.add("right" + size.id.substring(7));
     });
+
+
 
        // Create the glow filter dynamically
        function createGlowFilter() {
@@ -128,7 +128,7 @@ btnAnchors.forEach((anchor, index) => {
         event.preventDefault();
         handleClick(event);
         if (clickCount <= index) {
-            pyramidElements[clickCount].style.display = "none";
+          pyramidElements[clickCount].style.display = "none";
             anchor.classList.add("inactive");
             clickCount++;
 
