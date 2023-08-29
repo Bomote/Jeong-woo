@@ -690,6 +690,11 @@ footer {
         padding: 0;
     }
 
+    .table-row{
+        padding: 0px;
+        width: 30em;
+    }
+
     .custom-field {
         display: flex;
     }
