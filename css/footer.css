@@ -1,0 +1,16 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin: 2em;
+}
+
+.footer-links a {
+    padding: 3px 4px;
+}
+
+.footer-legal p {
+    margin-top: 10px;
+    font-size: 18px;
+}

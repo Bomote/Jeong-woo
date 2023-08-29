@@ -1,0 +1,139 @@
+.pyramid-container{
+    position: absolute;
+    top: 65%;
+    right: 5%;
+    width: 400px;
+    height: auto;
+    perspective: 800px;
+    perspective-origin: 50% calc(50% - 300px);
+    animation: bobbing 10s ease-in-out infinite;
+    animation-direction: alternate;
+    z-index: 0;
+}
+
+@keyframes bobbing {
+    to{
+        top: 50%;
+    }
+}
+
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(-30deg);
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    animation: turn 30s linear infinite;
+}
+
+
+@keyframes turn {
+    0% {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+    }
+    
+    100% {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(360deg);
+    }
+}
+
+.side, .sideXXL, .sideXL, .sideLG, .sideMD, .sideSM, .sideXS, .sideCAP {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: auto;
+    transform-style: preserve-3d;
+}
+
+/* Pyramid sides transformations */
+
+/* First Pyramid */
+
+.front { transform: translateZ(91px) rotateX(30deg); }
+.back { transform: rotateY(180deg) translateZ(91px) rotateX(30deg); }
+.left { transform: rotateY(90deg) translateZ(91px) rotateX(30deg); }
+.right { transform: rotateY(-90deg) translateZ(91px) rotateX(30deg); }
+
+/* Second Pyramid */
+
+.frontXXL { transform: translateZ(68px) rotateX(26deg); }
+.backXXL { transform: rotateY(180deg) translateZ(68px) rotateX(26deg); }
+.leftXXL { transform: rotateY(90deg) translateZ(68px) rotateX(26deg); }
+.rightXXL { transform: rotateY(-90deg) translateZ(68px) rotateX(26deg); }
+
+/* Third Pyramid */
+
+.frontXL { transform: translateZ(57px) rotateX(27deg); }
+.backXL { transform: rotateY(180deg) translateZ(57px) rotateX(27deg); }
+.leftXL { transform: rotateY(90deg) translateZ(57px) rotateX(27deg); }
+.rightXL { transform: rotateY(-90deg) translateZ(57px) rotateX(27deg); }
+
+/* Fourth Pyramid */
+
+.frontLG { transform: translateZ(45px) rotateX(27deg); }
+.backLG { transform: rotateY(180deg) translateZ(45px) rotateX(27deg); }
+.leftLG { transform: rotateY(90deg) translateZ(45px) rotateX(27deg); }
+.rightLG { transform: rotateY(-90deg) translateZ(45px) rotateX(27deg); }
+
+/* Fifth Pyramid */
+
+.frontMD { transform: translateZ(34px) rotateX(27deg); }
+.backMD { transform: rotateY(180deg) translateZ(34px) rotateX(27deg); }
+.leftMD { transform: rotateY(90deg) translateZ(34px) rotateX(27deg); }
+.rightMD { transform: rotateY(-90deg) translateZ(34px) rotateX(27deg); }
+
+/* Sixth Pyramid */
+
+.frontSM { transform: translateZ(24px) rotateX(27deg); }
+.backSM { transform: rotateY(180deg) translateZ(24px) rotateX(27deg); }
+.leftSM { transform: rotateY(90deg) translateZ(24px) rotateX(27deg); }
+.rightSM { transform: rotateY(-90deg) translateZ(24px) rotateX(27deg); }
+
+/* Seventh Pyramid */
+
+.frontXS { transform: translateZ(13px) rotateX(26deg); }
+.backXS { transform: rotateY(180deg) translateZ(13px) rotateX(26deg); }
+.leftXS { transform: rotateY(90deg) translateZ(13px) rotateX(26deg); }
+.rightXS { transform: rotateY(-90deg) translateZ(13px) rotateX(26deg); }
+
+/* Pyramid Cap */
+
+.frontCAP { transform: translateZ(86px) rotateX(28deg) translateY(-169px); }
+.backCAP { transform: rotateY(180deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
+.leftCAP { transform: rotateY(90deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
+.rightCAP { transform: rotateY(-90deg) translateZ(86px) rotateX(28deg) translateY(-169px); }
+
+.pulse {
+    animation: pulsing 3s linear infinite;
+}
+
+@keyframes pulsing {
+    0%{
+        opacity: 1;
+    }
+     50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fill-pyramid {
+    animation: fill-pyramid 5s linear 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fill-pyramid {
+    0% {
+        fill: rgba(17, 75, 95, 0);
+    }
+
+    100% {
+        fill: rgba(17, 75, 95, 1);
+    }
+  }
