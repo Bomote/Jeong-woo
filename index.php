@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d93fb96b59.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <script src="https://kit.fontawesome.com/d93fb96b59.js" crossorigin="anonymous"></script>
+    <script src="nav.js" defer></script>
+    <title>코드 받기</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <picture>
+                    <!-- Load this image on screens with a width up to 480px -->
+                    <source media="(max-width: 1023px)" srcset="assets/logo-small.png">
+                
+                    <!-- Load the default image on other screens -->
+                    <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" width="auto" height="50px">
+                </picture>
+            </a>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul id="primary-navigation" data-visible="false" class="navbar">
+                <li><a href="">HOME</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">ALPHA TRIANGIE 란? <i class="fa-solid fa-caret-down"></i></button>
+                        <div class="drop-content">
+                            <a href="">읽어보고 이해하기</a>
+                            <a href="">그림보고 이해하기</a>                                 
+                        </div>
+                    </div>
+                </li>
+                <li> 
+                    <div class="dropdown">
+                        <button class="dropbtn">대여 <i class="fa-solid fa-caret-down"></i></button>
+                        <div class="drop-content">
+                            <a href="">대여하기</a>
+                            <a href="">대여내역</a>                                 
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">반납 <i class="fa-solid fa-caret-down"></i></button>
+                        <div class="drop-content">
+                            <a href="">반납하기</a>                                 
+                            <a href="">반납내역</a>                                 
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="">코드받기</a>
+                </li>
+                <li>
+                    <a href="">E-MAIL CONSULTATION</a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">고객센터 <i class="fa-solid fa-caret-down"></i></button>
+                        <div class="drop-content">
+                            <a href="">문의</a>                               
+                        </div>
+                    </div>
+                </li>
+
+                <div class="login">
+                    <button class="dropbtn" id="login">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/itmsnfur.json"
+                            trigger="hover"
+                            colors="outline:#121331,primary:#b26836,secondary:#4bb3fd,tertiary:#f9c9c0"
+                            style="width:40px;height:40px">
+                        </lord-icon>
+                    </button> |
+                    <button class="dropbtn" id="logout">로그아웃</button>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="glass">
+            <div class="sponsorable">
+                <p class="sponsorables">
+                    후원가능 ALT
+                    <span id="token-count">0</span>
+                    ALT
+                </p>
+            </div>
+            <div class="table">
+                <table>
+                    <tr class="table-head">
+                        <th class="col-1">ID</th>
+                        <th class="col-2">상태</th>
+                        <th class="col-3">후원ALT</th>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="col-1">Alpha Triangle</td>
+                        <td class="col-2">
+                            <a href="" class="btn">
+                                <div class="circle"  id="fill">
+                                    <div class="water"></div>
+                                </div>
+                            </a>
+                        </td>
+                        <td class="col-3">
+                            <label for="token" class="custom-field">
+                                <input type="number" placeholder="금액을 입력하세요" onfocus="this.placeholder=''" onblur="this.placeholder='금액을 입력하세요'">
+                                <span>ALT</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="col-1">company1@mail.com</td>
+                        <td class="col-2">
+                            <a href="" class="btn">
+                                <div class="circle"  id="fill">
+                                    <div class="water"></div>
+                                </div>
+                            </a>
+                        </td>                        
+                        <td class="col-3">
+                            <label for="token" class="custom-field">
+                                <input type="number" placeholder="금액을 입력하세요" onfocus="this.placeholder=''" onblur="this.placeholder='금액을 입력하세요'">
+                                <span>ALT</span>
+                            </label>                        
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="col-1">company2@mail.com</td>
+                        <td class="col-2">
+                            <a href="" class="btn">
+                                <div class="circle"  id="fill">
+                                    <div class="water"></div>
+                                </div>
+                            </a>
+                        </td>                        
+                        <td class="col-3">
+                            <label for="token" class="custom-field">
+                                <input type="number" placeholder="금액을 입력하세요" onfocus="this.placeholder=''" onblur="this.placeholder='금액을 입력하세요'">
+                                <span>ALT</span>
+                            </label>                        
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="col-1">grouop1_3@mail.com</td>
+                        <td class="col-2">
+                            <a href="" class="btn">
+                                <div class="circle"  id="fill">
+                                    <div class="water"></div>
+                                </div>
+                            </a>
+                        </td>                       
+                        <td class="col-3">
+                            <label for="token" class="custom-field">
+                                <input type="number" placeholder="금액을 입력하세요" onfocus="this.placeholder=''" onblur="this.placeholder='금액을 입력하세요'">
+                                <span>ALT</span>
+                            </label>                        
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="col-1">grouop1_4@mail.com</td>
+                        <td class="col-2">
+                            <a href="" class="btn">
+                                <div class="circle"  id="fill">
+                                    <div class="water"></div>
+                                </div>
+                            </a>
+                        </td>                        
+                        <td class="col-3">
+                            <label for="token" class="custom-field">
+                                <input type="number" placeholder="금액을 입력하세요" onfocus="this.placeholder=''" onblur="this.placeholder='금액을 입력하세요'">
+                                <span>ALT</span>
+                            </label>                        
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="col-1">grouop1_5@mail.com</td>
+                        <td class="col-2">
+                            <a href="" class="btn">
+                                <div class="circle"  id="fill">
+                                    <div class="water"></div>
+                                </div>
+                            </a>
+                        </td>                        
+                        <td class="col-3">
+                            <label for="token" class="custom-field">
+                                <input type="number" placeholder="금액을 입력하세요" onfocus="this.placeholder=''" onblur="this.placeholder='금액을 입력하세요'">
+                                <span>ALT</span>
+                            </label>                        
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+            
+            <div class="reveal" id="reveal">
+                <p class="btn-shine" id="reveal-btn">후원하고 장금을 해제하세요 <span>Alpha Trangle</span> 코드를 공개하기 위해!</p>
+                <button id="referral-btn" class="bubbly-button" >코드 받기</button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Your recommendation code</h3>  
+                            <i class="fa-regular fa-circle-xmark fa-spin close"></i>                        
+                        </div>
+                        <h3 id="referral-code">2345-6789-0123</h3>
+                        <button id="copy" onclick="copyToClipboard(document.getElementById('referral-code'))">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pyramid-container">
+                <div class="box pyramid" id="pyramid"></div>
+                <div class="box pyramidXXL" id="pyramidXXL"></div>
+                <div class="box pyramidXL" id="pyramidXL"></div>
+                <div class="box pyramidLG" id="pyramidLG"></div>
+                <div class="box pyramidMD" id="pyramidMD"></div>
+                <div class="box pyramidSM" id="pyramidSM"></div>
+                <div class="box pyramidXS" id="pyramidXS"></div>
+                <div class="box pyramidCAP" id="pyramidCAP"></div>
+            </div>
+        </div>        
+    </main>
+    <footer>
+        <div class="footer-logo">
+            <div>
+                <a href="">
+                    <picture>
+                        <!-- Load this image on screens with a width up to 480px -->
+                        <source media="(max-width: 1023px)" srcset="assets/logo-small.png">
+                    
+                        <!-- Load the default image on other screens -->
+                        <img src="assets/logo.png" alt="ALPHA TRIANGLE LOGO" width="auto" height="50px">
+                    </picture>                
+                </a>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="">업체정보</a> <span>|</span>
+                <a href="">이용약관</a> <span>|</span>
+                <a href="">개인정보수집</a>
+            </div>
+            <div class="footer-legal">
+                <p>Alpha Triangle <span>|</span> 사업자번호 :  <span>|</span>  대표 :  <span>|</span>  </p>
+                <p class="copyright">Copyright ⓒ2023 Alpha Triangle All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
