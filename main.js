@@ -1,14 +1,15 @@
 // Wait for the DOM content to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
+  
   // Function to create an SVG element
- function createSvg() {
-   // Create and configure an SVG element
-   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-   svg.setAttribute("width", "100%");
-   svg.setAttribute("height", "100%");
-   svg.setAttribute("viewBox", "0 0 100% 100%");
-   return svg;
- }
+  function createSvg() {
+    // Create and configure an SVG element
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", "100%");
+    svg.setAttribute("viewBox", "0 0 100% 100%");
+    return svg;
+  }
 
  // Function to create nested pyramid sides
  function createNestedPyramid(length, className, parentID, d) {
@@ -67,111 +68,94 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    // Create the glow filter dynamically
-    function createGlowFilter() {
-     const filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
-     filter.setAttribute("id", "glow");
+  // Create the glow filter dynamically
+  function createGlowFilter() {
+      const filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
+      filter.setAttribute("id", "glow");
 
-     const feGaussianBlur = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
-     feGaussianBlur.setAttribute("stdDeviation", "5");
-     feGaussianBlur.setAttribute("result", "coloredBlur");
+      const feGaussianBlur = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
+      feGaussianBlur.setAttribute("stdDeviation", "5");
+      feGaussianBlur.setAttribute("result", "coloredBlur");
 
-     const feMerge = document.createElementNS("http://www.w3.org/2000/svg", "feMerge");
-     const feMergeNode1 = document.createElementNS("http://www.w3.org/2000/svg", "feMergeNode");
-     feMergeNode1.setAttribute("in", "coloredBlur");
-     const feMergeNode2 = document.createElementNS("http://www.w3.org/2000/svg", "feMergeNode");
-     feMergeNode2.setAttribute("in", "SourceGraphic");
+      const feMerge = document.createElementNS("http://www.w3.org/2000/svg", "feMerge");
+      const feMergeNode1 = document.createElementNS("http://www.w3.org/2000/svg", "feMergeNode");
+      feMergeNode1.setAttribute("in", "coloredBlur");
+      const feMergeNode2 = document.createElementNS("http://www.w3.org/2000/svg", "feMergeNode");
+      feMergeNode2.setAttribute("in", "SourceGraphic");
 
-     feMerge.appendChild(feMergeNode1);
-     feMerge.appendChild(feMergeNode2);
+      feMerge.appendChild(feMergeNode1);
+      feMerge.appendChild(feMergeNode2);
 
-     filter.appendChild(feGaussianBlur);
-     filter.appendChild(feMerge);
+      filter.appendChild(feGaussianBlur);
+      filter.appendChild(feMerge);
 
-     return filter;
- }
+      return filter;
+  }
 
-    // Append the glow filter to the SVG element
-    const svgElement = document.querySelector("svg"); // Replace with the actual selector
-    const glowFilter = createGlowFilter();
-    svgElement.appendChild(glowFilter);
+  // Append the glow filter to the SVG element
+  const svgElement = document.querySelector("svg"); // Replace with the actual selector
+  const glowFilter = createGlowFilter();
+  svgElement.appendChild(glowFilter);
 
- // Get button anchors and pyramid elements
- const btnAnchors = document.querySelectorAll(".btn");
- const pyramidElements = pyramidSizes.map(size => document.getElementById(size.id)); 
-
-/*pyramidElements.forEach(pyramid => {
-  const pyramidSides = pyramid.querySelectorAll(".side" + pyramid.id.substring(7)); // Select all sides within the pyramid
-  pyramidSides.forEach(side => {
-    const svgElement = side.querySelector('svg'); // Select the SVG element inside the side
-    const svgPath = svgElement.querySelector('path'); // Select the path element inside the SVG
-
-    svgPath.classList.add('fill-pyramid')
-    svgPath.classList.add('wave-pyramid')
-  });
-});*/
+  // Get button anchors and pyramid elements
+  const btnAnchors = document.querySelectorAll(".btn");
+  const pyramidElements = pyramidSizes.map(size => document.getElementById(size.id)); 
 
  // Click count for button interactions
  let clickCount = 0;
      
+  const referralBtn = document.getElementById('referral-btn');
+  const referralText = document.getElementById('reveal-btn');
 
-const referralBtn = document.getElementById('referral-btn');
-const referralText = document.getElementById('reveal-btn');
+  // Add click event listeners to button anchors
+  btnAnchors.forEach((anchor, index) => {
+  anchor.addEventListener("click", function(event) {
+      event.preventDefault();
+      handleClick(event);
+      // Get the pyramid corresponding to the current clickCount
+      const currentPyramid = pyramidElements[clickCount];
+      
+      if (clickCount <= index && currentPyramid) {
+        const pyramidSides = currentPyramid.querySelectorAll(".side" + currentPyramid.id.substring(7));
+        pyramidSides.forEach(side => {
+          const svgElement = side.querySelector('svg'); // Select the SVG element inside the side
+          const svgPath = svgElement.querySelector('path'); // Select the path element inside the SVG
+      
+          svgPath.classList.add('fill-pyramid');
+          svgPath.classList.add('wave-pyramid');
+        });
 
+        //pyramidElements[clickCount].style.display = "none";
+          anchor.classList.add("inactive");
+          clickCount++;
 
-
-
-
-
-// Add click event listeners to button anchors
-btnAnchors.forEach((anchor, index) => {
- anchor.addEventListener("click", function(event) {
-     event.preventDefault();
-     handleClick(event);
-    // Get the pyramid corresponding to the current clickCount
-    const currentPyramid = pyramidElements[clickCount];
-    
-    if (clickCount <= index && currentPyramid) {
-      const pyramidSides = currentPyramid.querySelectorAll(".side" + currentPyramid.id.substring(7));
-      pyramidSides.forEach(side => {
-        const svgElement = side.querySelector('svg'); // Select the SVG element inside the side
-        const svgPath = svgElement.querySelector('path'); // Select the path element inside the SVG
-    
-        svgPath.classList.add('fill-pyramid');
-        svgPath.classList.add('wave-pyramid');
-      });
-
-      //pyramidElements[clickCount].style.display = "none";
-         anchor.classList.add("inactive");
-         clickCount++;
-
-         if (clickCount === btnAnchors.length) {
-             referralText.style.display = "none"
-             referralBtn.style.display = "inline-block"
-             addBackPyramids();
-         } else {
-             pulseRemainingPyramids();
-         }
-     }
- });
-});
+          if (clickCount === btnAnchors.length) {
+              referralText.style.display = "none"
+              referralBtn.style.display = "inline-block"
+              addBackPyramids();
+          } else {
+              pulseRemainingPyramids();
+          }
+      }
+  });
+  });
 
 
- // Function to remove the pulse class from remaining pyramids
-function removePulseFromRemainingPyramids() {
- pyramidSizes.forEach((pyramid, index) => {
-     if (index >= clickCount) {
-         const side = document.querySelectorAll(".side" + pyramid.id.substring(7));
-         side[0].classList.remove("pulse");
-         side[1].classList.remove("pulse");
-         side[2].classList.remove("pulse");
-         side[3].classList.remove("pulse");
-     }
- });
-}
+  // Function to remove the pulse class from remaining pyramids
+  function removePulseFromRemainingPyramids() {
+  pyramidSizes.forEach((pyramid, index) => {
+      if (index >= clickCount) {
+          const side = document.querySelectorAll(".side" + pyramid.id.substring(7));
+          side[0].classList.remove("pulse");
+          side[1].classList.remove("pulse");
+          side[2].classList.remove("pulse");
+          side[3].classList.remove("pulse");
+      }
+  });
+  }
 
- // Function to apply the pulse animation to remaining pyramids
-function pulseRemainingPyramids() {
+  // Function to apply the pulse animation to remaining pyramids
+  function pulseRemainingPyramids() {
      pyramidSizes.forEach((pyramid, index) => {
          if (index >= clickCount) {
              const side = document.querySelectorAll(".side" + pyramid.id.substring(7));
@@ -183,19 +167,18 @@ function pulseRemainingPyramids() {
      });
      // Remove the pulse class from remaining pyramids after 2 seconds
      setTimeout(removePulseFromRemainingPyramids, 2000);
- }    
+  }    
 });
 
-var animateButton = function(e) {
-
- e.preventDefault;
- //reset animation
- e.target.classList.remove('animate');
+function animateButton(e) {
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
  
- e.target.classList.add('animate');
- setTimeout(function(){
-   e.target.classList.remove('animate');
- },700);
+  e.target.classList.add('animate');
+  setTimeout(function(){
+    e.target.classList.remove('animate');
+  },700);
 };
 
 var bubblyButtons = document.getElementsByClassName("bubbly-button");
@@ -206,44 +189,43 @@ for (var i = 0; i < bubblyButtons.length; i++) {
 
 
 // Get the modal
-var modal = document.getElementById("myModal");
+let modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("referral-btn");
+let btn = document.getElementById("referral-btn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
-modal.style.display = "block";
+  modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-modal.style.display = "none";
+  modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-if (event.target == modal) {
- modal.style.display = "none";
-}
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 function copyToClipboard(element) {
-    const text = element.textContent;
-    navigator.clipboard.writeText(text)
-      .then(() => {
-        console.log('Text copied to clipboard: ', text);
-      })
-      .catch((error) => {
-        console.error('Error copying text to clipboard: ', error);
-      });
+  const text = element.textContent;
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      console.log('Text copied to clipboard: ', text);
+    })
+    .catch((error) => {
+      console.error('Error copying text to clipboard: ', error);
+    });
 
-      modal.style.display = "none";
+    modal.style.display = "none";
 }
-
 
 // Get all the buttons with the class 'btn'
 const buttons = document.querySelectorAll('.btn');
@@ -256,7 +238,6 @@ function handleClick(event) {
   const waterDiv = tableRow.querySelector('.water');
 
   waterDiv.classList.add('fill', 'wave');
-
 }
 
 buttons.forEach(button => {
